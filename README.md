@@ -111,13 +111,3 @@ Older versions used `agent.run()` which threw deprecation warnings.
 - ✅ Replace mock database with a real-time API (e.g., Amazon, Best Buy)
 - ✅ Add conversation history & session memory
 
----
-
-### ✅ Submission Complete
-
-All components required by the coding challenge are included:
-- ✅ Working LangChain agent with Gemini integration
-- ✅ Tool-augmented product recommendation logic
-- ✅ 10 fictional products (laptops, cameras)
-- ✅ Command-line interface
-- ✅ Thorough README with design explanations and screenshots
