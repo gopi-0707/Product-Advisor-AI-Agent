@@ -7,13 +7,15 @@ from langchain.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from database import search_products
 
+# Creating a tool whcih searched the product database
 @tool
 def product_tool(query: str) -> str:
     """Searches mock product database based on user query."""
     return search_products(query)
 
+# Function to create LLM agent
 def create_agent():
-
+    # Initializing the LLM
     llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash",
     temperature=0.7,
