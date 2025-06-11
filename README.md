@@ -85,10 +85,11 @@ python main.py
 
 ## 🧪 Sample Output
 
-Attach screenshots here (as seen in your terminal):
-- Shows the tool being invoked
-- Shows Gemini's final reasoning response
-- Demonstrates agent's ability to handle vague and specific queries
+Here are example CLI interactions with the agent:
+
+![CLI Output 1](TestOutputLog1.png)
+![CLI Output 2](TestOutputLog2.png)
+![CLI Output 3](TestOutputLog3_Updated_products.png)
 
 ---
 
