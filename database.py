@@ -1,3 +1,4 @@
+# Mock product database containing fictional laptops and cameras
 products = [
     {
         "name": "BudgetBook 14",
@@ -86,22 +87,27 @@ products = [
 ]
 
 
+# Function to search products based on user query
 def search_products(query: str) -> str:
     import re
 
+    # Default values for parsed query parameters
     budget = 9999
     category = ""
     features = []
 
+    # Extract budget (e.g., "under $500") using regex
     budget_match = re.search(r'under \$?(\d+)', query.lower())
     if budget_match:
         budget = int(budget_match.group(1))
 
+    # Determine category from keywords
     if "laptop" in query.lower():
         category = "Laptop"
     elif "camera" in query.lower():
         category = "Camera"
 
+    # Extract feature-related keywords from query
     if "8gb" in query.lower():
         features.append("8GB RAM")
     if "zoom" in query.lower():
@@ -111,16 +117,22 @@ def search_products(query: str) -> str:
     if "stabilization" in query.lower():
         features.append("Image Stabilization")
 
+    # Filter products based on parsed criteria
     matches = []
     for product in products:
+        # Skip if category doesn't match
         if category and product['category'] != category:
             continue
+        # Skip if product is over budget
         if product['price'] > budget:
             continue
+        # Ensure all requested features are present
         if not all(any(f.lower() in feature.lower() for feature in product['features']) for f in features):
             continue
+        # Add matching product to result list
         matches.append(product)
 
+    # Return formatted results or fallback message
     if not matches:
         return "No matching products found."
 
