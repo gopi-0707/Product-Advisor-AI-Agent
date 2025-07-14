@@ -29,23 +29,23 @@ The agent formulates a final user-facing message using the Gemini 2.0 Flash mode
 
 ---
 
-## 💡 Design Choices
+## Design Choices
 
-### ✅ LangChain Framework
+### LangChain Framework
 - **Why LangChain**: It offers pre-built agent types, easy tool integration, and compatibility with multiple LLMs like Gemini.
 - **Agent Type**: Used `chat-zero-shot-react-description` for flexibility and transparent reasoning steps.
 
-### ✅ Gemini 2.0 Flash (LLM)
+### Gemini 2.0 Flash (LLM)
 - **Why Gemini**: Offers fast, lightweight, cost-efficient generation under the free tier. Also aligned with Google AI tools.
 - **Model**: `gemini-2.0-flash`
 
-### ✅ Mock Product Database
+### Mock Product Database
 - Implemented as a simple Python list of dictionaries.
 - Each product contains:
   - `name`, `category`, `features`, and `price`
 - Chose laptops and cameras to simulate diversity in queries.
 
-### ✅ Prompt Engineering
+### Prompt Engineering
 - Prompts passed to Gemini include:
   - Original user query
   - Tool output (matched product list)
@@ -97,18 +97,18 @@ Here are example CLI interactions with the agent:
 
 ### Gemini-Pro Not Supported
 Initially, `gemini-pro` returned a 404 error due to API method mismatch.  
-✅ **Solution**: Switched to `gemini-2.0-flash`, which works seamlessly with LangChain tools.
+ **Solution**: Switched to `gemini-2.0-flash`, which works seamlessly with LangChain tools.
 
 ### Agent.run() Deprecated
 Older versions used `agent.run()` which threw deprecation warnings.  
-✅ **Solution**: Migrated to `agent.invoke()` per latest LangChain docs.
+ **Solution**: Migrated to `agent.invoke()` per latest LangChain docs.
 
 ---
 
 ## Future Improvements
 
-- ✅ Use spaCy or Gemini function calling for more accurate query parsing
-- ✅ Create a Streamlit interface for web-based interaction
-- ✅ Replace mock database with a real-time API (e.g., Amazon, Best Buy)
-- ✅ Add conversation history & session memory
+-  Use spaCy or Gemini function calling for more accurate query parsing
+-  Create a Streamlit interface for web-based interaction
+-  Replace mock database with a real-time API (e.g., Amazon, Best Buy)
+-  Add conversation history & session memory
 
