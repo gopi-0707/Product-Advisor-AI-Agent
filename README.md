@@ -1,6 +1,6 @@
-# 🧠 AI Product Advisor Agent (Gemini-Powered)
+# AI Product Advisor Agent (Gemini-Powered)
 
-## 📌 Overview
+## Overview
 
 This project implements an intelligent **Product Advisor Agent** using **LangChain** and **Google Gemini 2.0 Flash**. The goal is to simulate an AI that helps users discover fictional products—like laptops or cameras—based on natural language queries, with meaningful and reasoned recommendations.
 
@@ -8,7 +8,7 @@ This agent was developed as part of the coding challenge for the **Generative AI
 
 ---
 
-## 🧱 Architecture
+## Architecture
 
 The agent follows a simple yet powerful architecture:
 
@@ -53,7 +53,7 @@ The agent formulates a final user-facing message using the Gemini 2.0 Flash mode
 
 ---
 
-## ⚙️ Setup & Run Instructions
+##  Setup & Run Instructions
 
 ### 1. Clone and navigate to the repo directory.
 
@@ -83,7 +83,7 @@ python main.py
 
 ---
 
-## 🧪 Sample Output
+## Sample Output
 
 Here are example CLI interactions with the agent:
 
@@ -93,19 +93,19 @@ Here are example CLI interactions with the agent:
 
 ---
 
-## 🚧 Challenges & Solutions
+## Challenges & Solutions
 
-### ❌ Gemini-Pro Not Supported
+### Gemini-Pro Not Supported
 Initially, `gemini-pro` returned a 404 error due to API method mismatch.  
 ✅ **Solution**: Switched to `gemini-2.0-flash`, which works seamlessly with LangChain tools.
 
-### ❌ Agent.run() Deprecated
+### Agent.run() Deprecated
 Older versions used `agent.run()` which threw deprecation warnings.  
 ✅ **Solution**: Migrated to `agent.invoke()` per latest LangChain docs.
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 - ✅ Use spaCy or Gemini function calling for more accurate query parsing
 - ✅ Create a Streamlit interface for web-based interaction
